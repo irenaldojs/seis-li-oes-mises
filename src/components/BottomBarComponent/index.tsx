@@ -1,5 +1,21 @@
-import { Book, Bookmark, Home, Info } from "@mui/icons-material";
-import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import {
+  Book,
+  Bookmark,
+  Close,
+  DarkMode,
+  Home,
+  Info,
+  Settings,
+  TextDecrease,
+  TextIncrease,
+} from "@mui/icons-material";
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  Box,
+  SpeedDial,
+  SpeedDialAction,
+} from "@mui/material";
 import React, { useEffect } from "react";
 import { Rotas } from "../../routes";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -39,7 +55,12 @@ export default function BottomBarComponent() {
 
   return (
     <BottomNavigation
-      sx={{ position: "fixed", bottom: 0 }}
+      sx={{
+        position: "fixed",
+        bottom: 0,
+        width: "100%",
+        display: { xs: "flex", md: "none" },
+      }}
       showLabels
       value={value}
       onChange={(_, newValue) => {
@@ -66,6 +87,38 @@ export default function BottomBarComponent() {
         icon={<Info />}
         value={Rotas.About}
       />
+      <Box position={"relative"}>
+        <SpeedDial
+          ariaLabel="SpeedDial"
+          FabProps={{
+            size: "small",
+            variant: "circular",
+            color: "default",
+          }}
+          sx={{
+            position: "absolute",
+            bottom: 65,
+            right: 10,
+          }}
+          icon={<Settings />}
+        >
+          <SpeedDialAction
+            icon={<TextIncrease fontSize="small" />}
+            tooltipTitle={"Aumentar Fonte"}
+            FabProps={{ size: "small", variant: "extended" }}
+          />
+          <SpeedDialAction
+            icon={<TextDecrease fontSize="small" />}
+            tooltipTitle={"Diminuir Fonte"}
+            FabProps={{ size: "small", variant: "extended" }}
+          />
+          <SpeedDialAction
+            icon={<DarkMode fontSize="small" />}
+            tooltipTitle={"Alternar Tema"}
+            FabProps={{ size: "small", variant: "extended" }}
+          />
+        </SpeedDial>
+      </Box>
     </BottomNavigation>
   );
 }

@@ -31,7 +31,7 @@ export default function ContainerComponent({
       alignItems={"center"}
       gap={2}
       padding={1}
-      marginTop={{ md: 10 }}
+      marginTop={{ xs: 5, md: 10 }}
       marginBottom={50}
     >
       <Typography variant="h5">{subtitle}</Typography>
