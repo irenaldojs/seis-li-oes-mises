@@ -9,4 +9,5 @@ export enum Rotas {
   Inflacao = "/inflacao",
   InvestimentoExterno = "/investimento_externo",
   PoliticasEIdeais = "/politicas_e_ideais",
+  Sumario = "/sumario",
 }

@@ -7,14 +7,14 @@ export default function Home() {
       flexDirection="column"
       alignItems={"center"}
       gap={2}
-      marginTop={{ xs: 10, md: 20 }}
+      marginTop={{ md: 20 }}
       marginBottom={20}
       p={1}
     >
       <Typography
         sx={{
           fontSize: {
-            xs: "3rem",
+            xs: "2.5rem",
             md: "5rem",
           },
         }}

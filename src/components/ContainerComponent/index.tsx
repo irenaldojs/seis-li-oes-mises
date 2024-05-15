@@ -31,7 +31,7 @@ export default function ContainerComponent({
       alignItems={"center"}
       gap={2}
       padding={1}
-      marginTop={10}
+      marginTop={{ md: 10 }}
       marginBottom={50}
     >
       <Typography variant="h5">{subtitle}</Typography>
@@ -43,42 +43,45 @@ export default function ContainerComponent({
         {title}
       </Typography>
 
-      <Box sx={{ maxWidth: 800, textIndent: 50 }}>
+      <Box sx={{ maxWidth: 800 }}>
         {introduction && (
           <Typography variant="body1">{introduction}</Typography>
         )}
         <br />
-        {textFormat?.map((child, index) => (
-          <div
-            key={title + "_" + index.toString()}
-            onClick={() => setMark(pageName, index)}
-          >
-            <Box
-              display={"flex"}
-              gap={1}
-              sx={{ cursor: "pointer" }}
-              position={"relative"}
+        <Box sx={{ textIndent: 50 }}>
+          {textFormat?.map((child, index) => (
+            <div
+              key={title + "_" + index.toString()}
               onClick={() => setMark(pageName, index)}
             >
               <Box
                 display={"flex"}
-                gap={2}
+                gap={1}
                 sx={{ cursor: "pointer" }}
                 position={"relative"}
                 onClick={() => setMark(pageName, index)}
               >
-                <Box position={"absolute"} alignItems={"start"} right={-50}>
-                  {pageName === page && verse === index && <Bookmark />}
-                </Box>
+                <Box
+                  display={"flex"}
+                  gap={2}
+                  sx={{ cursor: "pointer" }}
+                  position={"relative"}
+                  onClick={() => setMark(pageName, index)}
+                >
+                  <Box position={"absolute"} alignItems={"start"} right={-50}>
+                    {pageName === page && verse === index && <Bookmark />}
+                  </Box>
 
-                <Box position={"absolute"} right={-25}>
-                  <span id={index.toString()}>{index + 1 + "."}</span>
+                  <Box position={"absolute"} right={-25}>
+                    <span id={index.toString()}>{index + 1 + "."}</span>
+                  </Box>
                 </Box>
+                <Typography variant="body1">{child}.</Typography>
               </Box>
-              <Typography variant="body1">{child}.</Typography>
-            </Box>
-          </div>
-        ))}
+            </div>
+          ))}
+        </Box>
+
         {children}
       </Box>
     </Box>

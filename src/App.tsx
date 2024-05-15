@@ -11,6 +11,8 @@ import About from "./pages/About";
 import { Rotas } from "./routes";
 import AppBarComponent from "./components/AppBarComponent";
 import Prefacio from "./pages/Prefacio";
+import BottomBarComponent from "./components/BottomBarComponent";
+import Sumario from "./pages/Sumario";
 
 function App() {
   return (
@@ -29,8 +31,10 @@ function App() {
         />
         <Route path={Rotas.PoliticasEIdeais} element={<PoliticasEIdeais />} />
         <Route path={Rotas.About} element={<About />} />
+        <Route path={Rotas.Sumario} element={<Sumario />} />
         <Route path="*" element={<Home />} />
       </Routes>
+      <BottomBarComponent />
     </>
   );
 }
