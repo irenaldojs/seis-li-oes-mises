@@ -30,16 +30,12 @@ export default function ContainerComponent({
       flexDirection="column"
       alignItems={"center"}
       gap={2}
-      padding={1}
-      marginTop={{ xs: 5, md: 10 }}
-      marginBottom={50}
+      paddingInline={1}
+      paddingTop={{ xs: 5, md: 10 }}
+      paddingBottom={50}
     >
       <Typography variant="h5">{subtitle}</Typography>
-      <Typography
-        variant="h3"
-        sx={{ fontSize: { xs: 38, sm: 48 } }}
-        textAlign={"center"}
-      >
+      <Typography variant="h3" textAlign={"center"}>
         {title}
       </Typography>
 

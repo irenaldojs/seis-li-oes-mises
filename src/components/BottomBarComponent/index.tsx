@@ -1,7 +1,6 @@
 import {
   Book,
   Bookmark,
-  Close,
   DarkMode,
   Home,
   Info,
@@ -20,12 +19,14 @@ import React, { useEffect } from "react";
 import { Rotas } from "../../routes";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useMark } from "../../store/mark";
+import { useMode } from "../../store/mode";
 
 export default function BottomBarComponent() {
   const [value, setValue] = React.useState("/");
   const location = useLocation();
   const navigate = useNavigate();
   const { loadMark } = useMark((state) => state);
+  const { addFontSize, subFontSize, swapTheme } = useMode((state) => state);
 
   const swapMark = async () => {
     const [page, verse] = loadMark();
@@ -106,16 +107,19 @@ export default function BottomBarComponent() {
             icon={<TextIncrease fontSize="small" />}
             tooltipTitle={"Aumentar Fonte"}
             FabProps={{ size: "small", variant: "extended" }}
+            onClick={() => addFontSize()}
           />
           <SpeedDialAction
             icon={<TextDecrease fontSize="small" />}
             tooltipTitle={"Diminuir Fonte"}
             FabProps={{ size: "small", variant: "extended" }}
+            onClick={() => subFontSize()}
           />
           <SpeedDialAction
             icon={<DarkMode fontSize="small" />}
             tooltipTitle={"Alternar Tema"}
             FabProps={{ size: "small", variant: "extended" }}
+            onClick={() => swapTheme()}
           />
         </SpeedDial>
       </Box>

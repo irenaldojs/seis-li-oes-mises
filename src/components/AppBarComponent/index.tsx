@@ -1,4 +1,4 @@
-import { Bookmark, Home, Info } from "@mui/icons-material";
+import { Bookmark } from "@mui/icons-material";
 
 import { AppBar, Avatar, Box, IconButton, Toolbar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -28,9 +28,18 @@ export default function AppBarComponent() {
     <AppBar
       position="fixed"
       component="nav"
-      sx={{ display: { xs: "none", sm: "block" } }}
+      sx={{
+        display: { xs: "none", sm: "block" },
+      }}
     >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
+      <Toolbar
+        variant="regular"
+        sx={{
+          justifyContent: "center",
+          display: "flex",
+          gap: 1,
+        }}
+      >
         <Avatar
           src="/avatar.jpeg"
           sx={{ width: 56, height: 56, marginRight: 2 }}
@@ -38,10 +47,10 @@ export default function AppBarComponent() {
         <Box
           display={{ xs: "none", sm: "flex" }}
           gap={2}
-          flexGrow={1}
           alignSelf={"flex-end"}
           paddingBottom={1}
         >
+          <TabButton onClick={() => navigate(Rotas.Home)}>Início</TabButton>
           <TabButton onClick={() => navigate(Rotas.Prefacio)}>
             Prefácio
           </TabButton>
@@ -63,16 +72,9 @@ export default function AppBarComponent() {
           <TabButton onClick={() => navigate(Rotas.PoliticasEIdeais)}>
             Politicas e Ideais
           </TabButton>
+          <TabButton onClick={() => navigate(Rotas.About)}>Sobre</TabButton>
         </Box>
-
-        <IconButton href="/home">
-          <Home fontSize="large" />
-        </IconButton>
-
-        <IconButton href="/about">
-          <Info fontSize="large" />
-        </IconButton>
-        <IconButton onClick={swapMark}>
+        <IconButton onClick={swapMark} sx={{ alignSelf: "flex-end" }}>
           <Bookmark fontSize="large" />
         </IconButton>
       </Toolbar>

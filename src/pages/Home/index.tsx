@@ -1,16 +1,9 @@
 import { Box, Link, Typography } from "@mui/material";
+import ContainerComponent from "../../components/ContainerComponent";
 
 export default function Home() {
   return (
-    <Box
-      display={"flex"}
-      flexDirection="column"
-      alignItems={"center"}
-      gap={2}
-      marginTop={{ md: 20 }}
-      marginBottom={20}
-      p={1}
-    >
+    <ContainerComponent>
       <Typography
         sx={{
           fontSize: {
@@ -21,6 +14,14 @@ export default function Home() {
       >
         As Seis Lições
       </Typography>
+      <Box
+        sx={{ maxWidth: 300 }}
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <img src="livros.png" width={"100%"} />
+      </Box>
       <Box sx={{ maxWidth: 800, textIndent: 50 }}>
         <Typography variant="body1">
           As Seis Lições Síntese da obra do grande economista Ludwig von Mises,
@@ -66,6 +67,6 @@ export default function Home() {
           </Typography>
         </Box>
       </Box>
-    </Box>
+    </ContainerComponent>
   );
 }
