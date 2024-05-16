@@ -13,7 +13,40 @@ export function appTheme(
         main: "#EEF1F1",
       },
       background: {
-        default: "#FFFFFF",
+        default: theme === "light" ? "#FFFFFF" : "black",
+      },
+    },
+    typography: {
+      fontFamily: "Playfair Display",
+      h1: {
+        fontSize: 3 * fontSize + "rem",
+      },
+      h2: {
+        fontSize: 2.6 * fontSize + "rem",
+      },
+      h3: {
+        fontSize: 2.2 * fontSize + "rem",
+      },
+      h4: {
+        fontSize: 1.8 * fontSize + "rem",
+      },
+      h5: {
+        fontSize: 1.6 * fontSize + "rem",
+      },
+      h6: {
+        fontSize: 1.4 * fontSize + "rem",
+      },
+      subtitle1: {
+        fontSize: 1.2 * fontSize + "rem",
+      },
+      subtitle2: {
+        fontSize: 1 * fontSize + "rem",
+      },
+      body1: {
+        fontSize: 1 * fontSize + "rem",
+      },
+      body2: {
+        fontSize: 0.8 * fontSize + "rem",
       },
     },
     components: {
@@ -66,43 +99,7 @@ export function appTheme(
       MuiTypography: {
         styleOverrides: {
           root: {
-            fontFamily: "Playfair Display",
             color: theme === "light" ? "black" : "white",
-            backgroundColor: theme === "light" ? "transparent" : "black",
-            variants: [
-              {
-                props: {
-                  variant: "h3",
-                },
-                style: {
-                  fontSize: { sm: 22 * fontSize },
-                },
-              },
-              {
-                props: {
-                  variant: "h5",
-                },
-                style: {
-                  fontSize: { sm: 14 * fontSize },
-                },
-              },
-              {
-                props: {
-                  variant: "body1",
-                },
-                style: {
-                  fontSize: { sm: 10 * fontSize },
-                },
-              },
-              {
-                props: {
-                  variant: "body2",
-                },
-                style: {
-                  fontSize: { sm: 8 * fontSize },
-                },
-              },
-            ],
           },
         },
       },

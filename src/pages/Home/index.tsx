@@ -4,26 +4,17 @@ import ContainerComponent from "../../components/ContainerComponent";
 export default function Home() {
   return (
     <ContainerComponent>
-      <Typography
-        sx={{
-          fontSize: {
-            xs: "2.5rem",
-            md: "5rem",
-          },
-        }}
-      >
+      <Typography variant="h1" textAlign={"center"}>
         As Seis Lições
       </Typography>
-      <Box
-        sx={{ maxWidth: 300 }}
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={"center"}
-      >
-        <img src="livros.png" width={"100%"} />
+      <Box display={"flex"} justifyContent={"center"}>
+        <Box sx={{ maxWidth: 300 }}>
+          <img src="livros.png" width={"100%"} />
+        </Box>
       </Box>
+
       <Box sx={{ maxWidth: 800, textIndent: 50 }}>
-        <Typography variant="body1">
+        <Typography variant="subtitle2">
           As Seis Lições Síntese da obra do grande economista Ludwig von Mises,
           talvez o maior da história, As Seis Lições pode ser considerado a
           melhor introdução ao pensamento do mestre e um grande resumo de sua
@@ -47,10 +38,10 @@ export default function Home() {
           borderRadius={2}
           p={1}
         >
-          <Typography variant="h5" textAlign={"center"}>
+          <Typography variant="subtitle1" textAlign={"center"}>
             Ludwig von Mises
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body1">
             Ludwig von Mises foi o reconhecido líder da Escola Austríaca, um
             prodigioso originador na teoria econômica e um autor prolífico. Os
             escritos e palestras de Mises abarcavam teoria econômica, história,
@@ -60,7 +51,7 @@ export default function Home() {
         <br />
         <Typography variant="body1">Referencias:</Typography>
         <Box marginLeft={2} sx={{ textDecoration: "none" }}>
-          <Typography variant="body2">
+          <Typography variant="subtitle1">
             <Link href="https://mises.org.br/livros/76/as-seis-licoes">
               Instituto Ludwig von Mises Brasil
             </Link>
