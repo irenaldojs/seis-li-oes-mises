@@ -100,6 +100,14 @@ export function appTheme(
         styleOverrides: {
           root: {
             color: theme === "light" ? "black" : "white",
+            variants: [
+              {
+                props: { variant: "body1" },
+                style: {
+                  textIndent: 50,
+                },
+              },
+            ],
           },
         },
       },

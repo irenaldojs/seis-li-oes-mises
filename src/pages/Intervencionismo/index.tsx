@@ -550,8 +550,7 @@ socialistas atribuíram a si mesmas a designação de democracia.
 provavelmente sustentam que o povo está representado na
 pessoa do ditador. Penso que aqui, na Argentina, um ditador
 recebeu a resposta que merecia. Esperamos que outros
-ditadores, em outras nações, recebam resposta semelhante.
-      `}
+ditadores, em outras nações, recebam resposta semelhante.`}
     />
   );
 }

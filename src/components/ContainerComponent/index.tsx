@@ -1,6 +1,7 @@
 import { Bookmark } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import { useMark } from "../../store/mark";
+import { useMode } from "../../store/mode";
 
 type ContainerComponentProps = {
   children?: React.ReactNode;
@@ -18,6 +19,7 @@ export default function ContainerComponent({
   subtitle,
 }: ContainerComponentProps) {
   const { page, verse, setMark } = useMark((state) => state);
+  const { theme } = useMode((state) => state);
   const pageName = window.location.pathname.split("#")[0];
   const textFormat = text?.split(".\n ").filter((child) => {
     const part = child.trim();
@@ -62,22 +64,28 @@ export default function ContainerComponent({
                   gap={2}
                   sx={{ cursor: "pointer" }}
                   position={"relative"}
+                  color={theme === "light" ? "grey" : "white"}
                   onClick={() => setMark(pageName, index)}
                 >
                   <Box position={"absolute"} alignItems={"start"} right={-50}>
-                    {pageName === page && verse === index && <Bookmark />}
+                    {pageName === page && verse === index && (
+                      <Bookmark color="inherit" />
+                    )}
                   </Box>
 
-                  <Box position={"absolute"} right={-25}>
+                  <Box
+                    position={"absolute"}
+                    right={-25}
+                    color={theme === "light" ? "black" : "white"}
+                  >
                     <span id={index.toString()}>{index + 1 + "."}</span>
                   </Box>
                 </Box>
-                <Typography variant="body1">{child}.</Typography>
+                <Typography variant="body1">{child}</Typography>
               </Box>
             </div>
           ))}
         </Box>
-
         {children}
       </Box>
     </Box>

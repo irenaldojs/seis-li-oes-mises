@@ -592,8 +592,7 @@ estar todos mortos. Aliás, não restam dúvidas de que estaremos
 mesmo mortos. Mas deveríamos cuidar de nossos assuntos
 terrenos – neste breve intervalo em que nos é dado viver – da
 melhor maneira possível. E uma das medidas necessárias para
-esse propósito é abandonar as políticas inflacionárias.
-      `}
+esse propósito é abandonar as políticas inflacionárias.`}
     />
   );
 }

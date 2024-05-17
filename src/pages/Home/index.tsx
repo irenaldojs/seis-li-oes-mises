@@ -13,8 +13,8 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box sx={{ maxWidth: 800, textIndent: 50 }}>
-        <Typography variant="subtitle2">
+      <Box sx={{ maxWidth: 800 }}>
+        <Typography variant="body1">
           As Seis Lições Síntese da obra do grande economista Ludwig von Mises,
           talvez o maior da história, As Seis Lições pode ser considerado a
           melhor introdução ao pensamento do mestre e um grande resumo de sua
@@ -29,34 +29,38 @@ export default function Home() {
           provavelmente, o livro mais vendido do autor.
         </Typography>
         <br />
-        <br />
-        <Box
-          display={"flex"}
-          flexDirection="column"
-          gap={1}
-          border={1}
-          borderRadius={2}
-          p={1}
-        >
-          <Typography variant="subtitle1" textAlign={"center"}>
-            Ludwig von Mises
-          </Typography>
-          <Typography variant="body1">
-            Ludwig von Mises foi o reconhecido líder da Escola Austríaca, um
-            prodigioso originador na teoria econômica e um autor prolífico. Os
-            escritos e palestras de Mises abarcavam teoria econômica, história,
-            epistemologia, governo e filosofia política.
-          </Typography>
+      </Box>
+      <Box display={"flex"} justifyContent={"center"}>
+        <Box sx={{ maxWidth: 300 }}>
+          <img src="ludwig-von-mises.jpg" width={"100%"} />
         </Box>
-        <br />
-        <Typography variant="body1">Referencias:</Typography>
-        <Box marginLeft={2} sx={{ textDecoration: "none" }}>
-          <Typography variant="subtitle1">
-            <Link href="https://mises.org.br/livros/76/as-seis-licoes">
-              Instituto Ludwig von Mises Brasil
-            </Link>
-          </Typography>
-        </Box>
+      </Box>
+      <Box
+        display={"flex"}
+        flexDirection="column"
+        gap={1}
+        border={1}
+        borderRadius={2}
+        p={1}
+      >
+        <Typography variant="subtitle1" textAlign={"center"}>
+          Ludwig von Mises
+        </Typography>
+        <Typography variant="body1">
+          Ludwig von Mises foi o reconhecido líder da Escola Austríaca, um
+          prodigioso originador na teoria econômica e um autor prolífico. Os
+          escritos e palestras de Mises abarcavam teoria econômica, história,
+          epistemologia, governo e filosofia política.
+        </Typography>
+      </Box>
+      <br />
+      <Typography variant="body1">Referencias:</Typography>
+      <Box marginLeft={2} sx={{ textDecoration: "none" }}>
+        <Typography variant="subtitle1">
+          <Link href="https://mises.org.br/livros/76/as-seis-licoes">
+            Instituto Ludwig von Mises Brasil
+          </Link>
+        </Typography>
       </Box>
     </ContainerComponent>
   );

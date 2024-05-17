@@ -83,27 +83,25 @@ especialistas na área, mas também pelos muitos admiradores de
 meu marido que não são economistas. E espero sinceramente
 que este livro venha a tornar-se acessível a um público mais
 jovem, especialmente aos alunos dos cursos secundários e
-universitários de todo o mundo.
-
-      `}
+universitários de todo o mundo.`}
     >
       <br />
       <Typography
-        variant="h5"
+        variant="subtitle1"
         textAlign={"center"}
         fontFamily={"Playfair Display"}
       >
         Margit von Mises
       </Typography>
       <Typography
-        variant="body1"
+        variant="subtitle2"
         textAlign={"right"}
         fontFamily={"Playfair Display"}
       >
         Nova York
       </Typography>
       <Typography
-        variant="body1"
+        variant="subtitle2"
         textAlign={"right"}
         fontFamily={"Playfair Display"}
       >

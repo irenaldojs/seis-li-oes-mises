@@ -433,8 +433,7 @@ de me dirigir a tão distinta plateia e espero que, dentro de
 alguns anos, o número dos defensores das ideias em prol da
 liberdade tenha crescido consideravelmente, neste e em outros
 países. Quanto a mim, tenho plena confiança no futuro da
-liberdade, tanto política quanto econômica.
-      `}
+liberdade, tanto política quanto econômica.`}
     />
   );
 }

@@ -457,8 +457,7 @@ métodos do capitalismo, embora essa aplicação não tenha sido
 completa em todos os pontos. Todo país pode experimentar o
 mesmo “milagre” de recuperação econômica, embora eu deva
 insistir em que esta não é fruto de milagre: é fruto da adoção de
-políticas econômicas sólidas, pois que é delas que resulta.
-      `}
+políticas econômicas sólidas, pois que é delas que resulta.`}
     ></ContainerComponent>
   );
 }
