@@ -64,7 +64,7 @@ export default function ContainerComponent({
                   gap={2}
                   sx={{ cursor: "pointer" }}
                   position={"relative"}
-                  color={theme === "light" ? "grey" : "white"}
+                  color={theme === "light" ? "#085475" : "white"}
                   onClick={() => setMark(pageName, index)}
                 >
                   <Box position={"absolute"} alignItems={"start"} right={-50}>

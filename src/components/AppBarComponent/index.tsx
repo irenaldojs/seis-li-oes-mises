@@ -50,29 +50,21 @@ export default function AppBarComponent() {
           alignSelf={"flex-end"}
           paddingBottom={1}
         >
-          <TabButton onClick={() => navigate(Rotas.Home)}>Início</TabButton>
-          <TabButton onClick={() => navigate(Rotas.Prefacio)}>
-            Prefácio
-          </TabButton>
-          <TabButton onClick={() => navigate(Rotas.Capitalismo)}>
-            O Capitalismo
-          </TabButton>
-          <TabButton onClick={() => navigate(Rotas.Socialismo)}>
-            O Socialismo
-          </TabButton>
-          <TabButton onClick={() => navigate(Rotas.Intervencionismo)}>
+          <TabButton route={Rotas.Home}>Início</TabButton>
+          <TabButton route={Rotas.Prefacio}>Prefácio</TabButton>
+          <TabButton route={Rotas.Capitalismo}>O Capitalismo</TabButton>
+          <TabButton route={Rotas.Socialismo}>O Socialismo</TabButton>
+          <TabButton route={Rotas.Intervencionismo}>
             O Intervencionismo
           </TabButton>
-          <TabButton onClick={() => navigate(Rotas.Inflacao)}>
-            A Inflação
-          </TabButton>
-          <TabButton onClick={() => navigate(Rotas.InvestimentoExterno)}>
+          <TabButton route={Rotas.Inflacao}>A Inflação</TabButton>
+          <TabButton route={Rotas.InvestimentoExterno}>
             Investimento Externo
           </TabButton>
-          <TabButton onClick={() => navigate(Rotas.PoliticasEIdeais)}>
+          <TabButton route={Rotas.PoliticasEIdeais}>
             Politicas e Ideais
           </TabButton>
-          <TabButton onClick={() => navigate(Rotas.About)}>Sobre</TabButton>
+          <TabButton route={Rotas.About}>Sobre</TabButton>
         </Box>
         <IconButton onClick={swapMark} sx={{ alignSelf: "flex-end" }}>
           <Bookmark fontSize="large" />
