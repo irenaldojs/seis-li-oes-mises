@@ -79,14 +79,14 @@ export default function BottomBarComponent() {
         value={Rotas.Sumario}
       />
       <BottomNavigationAction
-        label="Marcador"
-        icon={<Bookmark />}
-        value="mark"
-      />
-      <BottomNavigationAction
         label="Sobre"
         icon={<Info />}
         value={Rotas.About}
+      />
+      <BottomNavigationAction
+        label="Marcador"
+        icon={<Bookmark />}
+        value="mark"
       />
       <Box position={"relative"}>
         <SpeedDial

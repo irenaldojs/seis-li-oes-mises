@@ -24,7 +24,7 @@ function App() {
 
   return (
     <ThemeProvider theme={configTheme}>
-      <Box sx={{ backgroundColor: theme === "light" ? "white" : "black" }}>
+      <Box sx={{ backgroundColor: theme === "light" ? "white" : "#161616" }}>
         <AppBarComponent />
         <Routes>
           <Route path={Rotas.Home} element={<Home />} />

@@ -73,13 +73,9 @@ export default function ContainerComponent({
                     )}
                   </Box>
 
-                  <Box
-                    position={"absolute"}
-                    right={-25}
-                    color={theme === "light" ? "black" : "white"}
-                  >
+                  <Typography position={"absolute"} right={-25} variant="body1">
                     <span id={index.toString()}>{index + 1 + "."}</span>
-                  </Box>
+                  </Typography>
                 </Box>
                 <Typography variant="body1">{child}</Typography>
               </Box>

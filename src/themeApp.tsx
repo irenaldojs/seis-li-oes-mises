@@ -8,6 +8,7 @@ export function appTheme(
     palette: {
       primary: {
         main: "#085475",
+        dark: "#A9E2F3",
       },
       secondary: {
         main: "#EEF1F1",
@@ -83,7 +84,7 @@ export function appTheme(
       MuiBottomNavigation: {
         styleOverrides: {
           root: {
-            backgroundColor: theme === "light" ? "#EEF1F1" : "black",
+            backgroundColor: theme === "light" ? "#EEF1F1" : "#363636",
             color: theme === "light" ? "black" : "white",
           },
         },
@@ -92,7 +93,10 @@ export function appTheme(
         styleOverrides: {
           root: {
             color: theme === "light" ? "grey.500" : "white",
-            backgroundColor: theme === "light" ? "#EEF1F1" : "black",
+            backgroundColor: theme === "light" ? "#EEF1F1" : "#363636",
+            "&.Mui-selected": {
+              color: theme === "light" ? "primary" : "#F5DA81",
+            },
           },
         },
       },
