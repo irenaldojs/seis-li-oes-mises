@@ -19,30 +19,13 @@ export function appTheme(
     },
     typography: {
       fontFamily: "Playfair Display",
-      h1: {
-        fontSize: 3 * fontSize + "rem",
-      },
-      h2: {
-        fontSize: 2.6 * fontSize + "rem",
-      },
-      h3: {
-        fontSize: 2.2 * fontSize + "rem",
-      },
-      h4: {
-        fontSize: 1.8 * fontSize + "rem",
-      },
-      h5: {
-        fontSize: 1.6 * fontSize + "rem",
-      },
-      h6: {
-        fontSize: 1.4 * fontSize + "rem",
-      },
       subtitle1: {
         fontSize: 1.2 * fontSize + "rem",
       },
       subtitle2: {
         fontSize: 1 * fontSize + "rem",
       },
+
       body1: {
         fontSize: 1 * fontSize + "rem",
       },
@@ -108,7 +91,7 @@ export function appTheme(
               {
                 props: { variant: "body1" },
                 style: {
-                  textIndent: 50,
+                  textIndent: "2.5em",
                 },
               },
             ],

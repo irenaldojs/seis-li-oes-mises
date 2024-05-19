@@ -42,13 +42,15 @@ export default function BottomBarComponent() {
     }, 100);
   };
 
-  useEffect(() => {
-    if (value === "mark") {
+  const actionBottomNavigation = (event: string) => {
+    if (event === "mark") {
       swapMark();
     } else {
-      navigate(value);
+      navigate(event);
     }
-  }, [value]);
+
+    setValue(event);
+  };
 
   useEffect(() => {
     setValue(location.pathname);
@@ -64,9 +66,7 @@ export default function BottomBarComponent() {
       }}
       showLabels
       value={value}
-      onChange={(_, newValue) => {
-        setValue(newValue);
-      }}
+      onChange={(_, newValue) => actionBottomNavigation(newValue)}
     >
       <BottomNavigationAction
         label="Início"

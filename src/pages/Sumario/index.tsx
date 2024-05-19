@@ -12,6 +12,7 @@ export default function Sumario() {
         display={"flex"}
         flexDirection={"column"}
         gap={2}
+        p={1}
         sx={{
           textIndent: 0,
           fontSize: 0.8 * fontSize + "rem",
@@ -19,24 +20,43 @@ export default function Sumario() {
         }}
         fontFamily={"Playfair Display"}
       >
-        <Link to={Rotas.Prefacio}>Prefácio por Margit von Mises</Link>
-        <Link to={Rotas.Capitalismo}>
-          Capítulo 1 - Primeira Lição: O Capitalismo
-        </Link>
-        <Link to={Rotas.Socialismo}>
-          Capítulo 2 - Segunda Lição: O Socialismo
-        </Link>
-        <Link to={Rotas.Intervencionismo}>
-          Capítulo 3 - Terceira Lição: O Intervencionismo
-        </Link>
-        <Link to={Rotas.Inflacao}>Capítulo 4 – Quarta lição: A Inflação</Link>
-        <Link to={Rotas.InvestimentoExterno}>
-          Capítulo 5 – Quinta lição: Investimento Externo
-        </Link>
-        <Link to={Rotas.PoliticasEIdeais}>
-          Capítulo 6 – Sexta lição : Política e Ideias
-        </Link>
+        {indices.map((index, count) => (
+          <Box key={"count_" + count}>
+            <Link to={index.link}>{index.title}</Link>
+          </Box>
+        ))}
       </Box>
     </ContainerComponent>
   );
 }
+
+const indices: { title: string; link: string }[] = [
+  {
+    title: "Prefácio por Margit von Mises",
+    link: Rotas.Prefacio,
+  },
+  {
+    title: "Primeira Lição: O Capitalismo",
+    link: Rotas.Capitalismo,
+  },
+  {
+    title: "Segunda Lição: O Socialismo",
+    link: Rotas.Socialismo,
+  },
+  {
+    title: "Terceira Lição: O Intervucionismo",
+    link: Rotas.Intervencionismo,
+  },
+  {
+    title: "Quarta lição: A Inflação",
+    link: Rotas.Inflacao,
+  },
+  {
+    title: "Quinta lição: Investimento Externo",
+    link: Rotas.InvestimentoExterno,
+  },
+  {
+    title: "Sexta lição : Política e Ideias",
+    link: Rotas.PoliticasEIdeais,
+  },
+];

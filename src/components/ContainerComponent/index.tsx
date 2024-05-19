@@ -34,7 +34,8 @@ export default function ContainerComponent({
       gap={2}
       paddingInline={1}
       paddingTop={{ xs: 5, md: 10 }}
-      paddingBottom={50}
+      paddingBottom={20}
+      minHeight={"100vh"}
     >
       <Typography variant="h5">{subtitle}</Typography>
       <Typography variant="h3" textAlign={"center"}>

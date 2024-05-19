@@ -10,8 +10,8 @@ export default function Prefacio() {
         dos adversários. Ao mesmo tempo que cada uma das seis lições pode
         figurar separadamente como um ensaio independente, a harmonia da série
         proporciona um prazer estético similar ao que se origina da contemplação
-        da arquitetura de um edifício bem concebido”. – Fritz Machlup,
-        Princeton, 1979"
+        da arquitetura de um edifício bem concebido”.
+         – Fritz Machlup, Princeton, 1979"
       text={`
  Em fins de 1958, meu marido foi convidado pelo Dr. Alberto
 Benegas Lynch para pronunciar uma série de conferências na

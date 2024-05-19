@@ -4,15 +4,19 @@ import ContainerComponent from "../../components/ContainerComponent";
 export default function Home() {
   return (
     <ContainerComponent>
-      <Typography variant="h1" textAlign={"center"}>
+      <Typography
+        textAlign={"center"}
+        fontSize={{ xs: 50, md: 70, textIndent: 0 }}
+      >
         As Seis Lições
       </Typography>
+      <br />
       <Box display={"flex"} justifyContent={"center"}>
         <Box sx={{ maxWidth: 300 }}>
           <img src="livros.png" width={"100%"} />
         </Box>
       </Box>
-
+      <br />
       <Box sx={{ maxWidth: 800 }}>
         <Typography variant="body1">
           As Seis Lições Síntese da obra do grande economista Ludwig von Mises,
@@ -43,7 +47,7 @@ export default function Home() {
         borderRadius={2}
         p={1}
       >
-        <Typography variant="subtitle1" textAlign={"center"}>
+        <Typography variant="subtitle1" textAlign={"center"} fontWeight={700}>
           Ludwig von Mises
         </Typography>
         <Typography variant="body1">
@@ -54,7 +58,9 @@ export default function Home() {
         </Typography>
       </Box>
       <br />
-      <Typography variant="body1">Referencias:</Typography>
+      <Typography variant="body1" fontWeight={500}>
+        Referencias:
+      </Typography>
       <Box marginLeft={2} sx={{ textDecoration: "none" }}>
         <Typography variant="subtitle1">
           <Link href="https://mises.org.br/livros/76/as-seis-licoes">
