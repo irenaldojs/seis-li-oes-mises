@@ -15,36 +15,22 @@ import {
   SpeedDial,
   SpeedDialAction,
 } from "@mui/material";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Rotas } from "../../routes";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useMark } from "../../store/mark";
 import { useMode } from "../../store/mode";
 
 export default function BottomBarComponent() {
-  const [value, setValue] = React.useState("/");
+  const [value, setValue] = useState("/");
   const location = useLocation();
   const navigate = useNavigate();
   const { loadMark } = useMark((state) => state);
   const { addFontSize, subFontSize, swapTheme } = useMode((state) => state);
 
-  const swapMark = async () => {
-    const [page, verse] = loadMark();
-
-    navigate(page ?? "");
-
-    setTimeout(() => {
-      const element = document.getElementById(verse?.toString() ?? "");
-
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }, 100);
-  };
-
   const actionBottomNavigation = (event: string) => {
     if (event === "mark") {
-      swapMark();
+      loadMark(navigate);
     } else {
       navigate(event);
     }

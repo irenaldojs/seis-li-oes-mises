@@ -25,7 +25,6 @@ export function appTheme(
       subtitle2: {
         fontSize: 1 * fontSize + "rem",
       },
-
       body1: {
         fontSize: 1 * fontSize + "rem",
       },
@@ -95,6 +94,23 @@ export function appTheme(
                 },
               },
             ],
+          },
+        },
+      },
+      MuiMenu: {
+        defaultProps: {
+          PaperProps: {
+            sx: {
+              color: theme === "light" ? "grey.700" : "white",
+              backgroundColor: theme === "light" ? "#EEF1F1" : "#363636",
+            },
+          },
+        },
+      },
+      MuiContainer: {
+        styleOverrides: {
+          root: {
+            backgroundColor: theme === "light" ? "white" : "#161616",
           },
         },
       },

@@ -14,17 +14,22 @@ import Prefacio from "./pages/Prefacio";
 import BottomBarComponent from "./components/BottomBarComponent";
 import Sumario from "./pages/Sumario";
 import { ThemeProvider } from "@emotion/react";
-import { Box, createTheme } from "@mui/material";
+import { Container, createTheme } from "@mui/material";
 import { useMode } from "./store/mode";
 import { appTheme } from "./themeApp";
+import { useLayoutEffect } from "react";
 
 function App() {
-  const { theme, fontSize } = useMode((state) => state);
+  const { theme, fontSize, loadTheme } = useMode((state) => state);
   const configTheme = createTheme(appTheme(theme, fontSize));
+
+  useLayoutEffect(() => {
+    loadTheme();
+  }, []);
 
   return (
     <ThemeProvider theme={configTheme}>
-      <Box sx={{ backgroundColor: theme === "light" ? "white" : "#161616" }}>
+      <Container>
         <AppBarComponent />
         <Routes>
           <Route path={Rotas.Home} element={<Home />} />
@@ -43,7 +48,7 @@ function App() {
           <Route path="*" element={<Home />} />
         </Routes>
         <BottomBarComponent />
-      </Box>
+      </Container>
     </ThemeProvider>
   );
 }

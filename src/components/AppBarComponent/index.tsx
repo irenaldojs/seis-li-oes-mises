@@ -1,28 +1,41 @@
-import { Bookmark } from "@mui/icons-material";
+import {
+  Bookmark,
+  DarkMode,
+  Settings,
+  TextDecrease,
+  TextIncrease,
+} from "@mui/icons-material";
 
-import { AppBar, Avatar, Box, IconButton, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Avatar,
+  Box,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useMark } from "../../store/mark";
 import { Rotas } from "../../routes";
 import TabButton from "../TabButton";
+import { useState } from "react";
+import { useMode } from "../../store/mode";
 
 export default function AppBarComponent() {
   const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
   const { loadMark } = useMark((state) => state);
+  const { addFontSize, subFontSize, swapTheme, theme } = useMode(
+    (state) => state,
+  );
 
-  const swapMark = async () => {
-    const [page, verse] = loadMark();
+  const handleClick = (event: React.MouseEvent<HTMLElement>) =>
+    setAnchorEl(event.currentTarget);
 
-    navigate(page ?? "");
-
-    setTimeout(() => {
-      const element = document.getElementById(verse?.toString() ?? "");
-
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }, 100);
-  };
+  const handleClose = () => setAnchorEl(null);
 
   return (
     <AppBar
@@ -66,10 +79,51 @@ export default function AppBarComponent() {
           </TabButton>
           <TabButton route={Rotas.About}>Sobre</TabButton>
         </Box>
-        <IconButton onClick={swapMark} sx={{ alignSelf: "flex-end" }}>
-          <Bookmark fontSize="large" />
+        <IconButton
+          sx={{ alignSelf: "flex-end" }}
+          id="basic-button"
+          aria-controls={open ? "basic-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+        >
+          <Settings fontSize="large" />
         </IconButton>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open ? true : false}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem
+            onClick={() => {
+              loadMark(navigate);
+              handleClose();
+            }}
+            sx={menuItemProps}
+          >
+            <Bookmark />
+            Marcardor
+          </MenuItem>
+          <MenuItem onClick={addFontSize} sx={menuItemProps}>
+            <TextIncrease />
+            Aumentar Fonte
+          </MenuItem>
+          <MenuItem onClick={subFontSize} sx={menuItemProps}>
+            <TextDecrease />
+            Diminuir Fonte
+          </MenuItem>
+          <MenuItem onClick={swapTheme} sx={menuItemProps}>
+            <DarkMode />
+            {theme === "light" ? "Tema Escuro" : "Tema Claro"}
+          </MenuItem>
+        </Menu>
       </Toolbar>
     </AppBar>
   );
 }
+
+const menuItemProps = { display: "flex", gap: 2, fontSize: "inherit" };
